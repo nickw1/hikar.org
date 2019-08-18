@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hikar - OpenStreetMap Augmented Reality for Walkers and Hikers</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+<link rel='stylesheet' type='text/css' href='css/hikar.css' />
+<link rel='stylesheet' href='https://unpkg.com/leaflet@1.5.0/dist/leaflet.css'/>
+<script type='text/javascript' src='https://unpkg.com/leaflet@1.5.0/dist/leaflet.js'></script>
+<script type='text/javascript' src='3p/kothic-js/dist/kothic.js'></script>
+<script type='text/javascript' src='3p/kothic-js/dist/kothic-leaflet.js'></script>
+<script type='text/javascript' src='kothic/style_new.js'></script>
+<script type='text/javascript' src='3p/Leaflet.draw/dist/leaflet.draw.js'></script>
+<script type='text/javascript' src='3p/freemap/FeatureLoader.js'></script>
+<link rel='stylesheet' type='text/css' href='3p/Leaflet.draw/dist/leaflet.draw.css' />
+<script type='text/javascript' src='3p/jslib/Dialog.js'></script>
+<script type='text/javascript' src='js/main.js'></script>
+<script type='text/javascript' src='js/map.js'></script>
+<script type='text/javascript' src='js/PoiController.js'></script>
+</head>
+<body onload='init()'>
+<div id='main'>
+    <div id='heading'>
+        <div id="loginContainer"> </div>
+        <div id='headingContainer'>
+            <h1>Hikar - OpenStreetMap augmented reality for walkers...</h1>
+			<p>Download from
+			<a href='https://play.google.com/store/apps/details?id=freemap.hikar'>Google Play</a>, <a id='more' href='#'>find out more</a> or <a id='noticeboard' href='#'>create noticeboards</a>.</p>
+        </div>
+		<div id='errorContainer' class='error'>
+			<?=$error ? $error : ""?>	
+		</div>
+    </div>
+<div id='imgContainer'>
+<img src='images/hikar_screenshot.png' alt='Hikar screenshot' />
+</div>
+</div>
+</body>
+</html>
+
+
+

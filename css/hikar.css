@@ -1,0 +1,186 @@
+@font-face {
+    font-family: roboto;
+    src: url('/roboto/Roboto-Regular.ttf');
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color : #000080;
+}
+
+#content, html, body {
+    height: 100%;
+}
+
+#main {
+    background-color: #000040;
+    color: white;
+    outline: 1px solid white;
+    position: relative;
+}
+
+
+#heading {
+    height: 100px;
+    border: 1px solid #8080ff;
+    border-bottom: 1px solid white;
+}
+
+#loginContainer {
+    float: right;
+}
+
+#headingContainer {
+    text-align: left;
+}
+
+#controlContainer {
+    float: right;
+}
+
+#errorContainer {
+	float: left;
+}
+
+#headingContainer > h1, #headingContainer > p {
+    display: inline; 
+}
+
+#headingContainer > p {
+    font-size: 150%;
+}
+
+a {
+    color: white; 
+    text-decoration: none;
+}
+
+a:hover {
+ 
+   text-decoration: underline;
+   color: yellow;
+}
+    
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.fmap_dlg label {
+    color: white; 
+    text-shadow: black -2px 2px 4px;
+}
+
+
+#searchterm {
+    border-radius: 10px;
+}
+
+#map a {
+    color: blue;
+}
+
+input[type=button], input[type=submit], input[type=file], #file1 {
+    font-family: 'Roboto';
+    border: 0;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+input[type=text], input[type=password] {
+    border: 0;
+    border-bottom: 1px solid white;
+    outline: 0;
+    background: transparent;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.error {
+    color: yellow;
+}
+
+.selected > img {
+    border: 1px solid white;
+}
+
+#viewContainer {
+    clear: both;
+    width: 100%;
+    position: relative;
+    height: calc(100% - 100px);  
+}
+
+#map {
+    z-index: 2;
+	width: 100%; 
+	height: 100%; 
+	border: 1px solid red;
+}
+
+#panorama, #map {
+    overflow: hidden;
+}
+
+#about_content, #signup_content {
+    height:432px;
+    overflow: auto;
+    margin: 10px;
+}
+
+#signup_content {
+    text-align: left;
+}
+
+
+#about_content a {
+    text-decoration: underline;
+}
+
+#searchContainer {
+    background-color: #000040;
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    width: 300px;
+    z-index: 9999;
+    text-align: left;
+}
+
+#search {
+    padding: 5px;
+    margin-bottom: 0px;
+}
+
+#searchResults {
+    background-color: white;
+    color: black;
+    margin-top: 0px;
+}
+
+#searchResults a {
+    color: blue;
+    margin-bottom: 5px;
+}
+
+#q {
+    font-size: 18pt;
+    width: calc(100% - 40px);
+}
+
+#imageContainer {
+    float: right;
+}
+
+#searchBtn {
+    right: 0px;
+}
+
+.resetPasswordContent {
+    font-size: 120%;
+}
+
+#imgContainer img {
+	width:100%;
+}

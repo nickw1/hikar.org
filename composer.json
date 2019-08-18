@@ -1,0 +1,8 @@
+{
+    "require": {
+        "slim/slim": "^3.0",
+        "slim/php-view": "^2.2",
+        "phpmailer/phpmailer": "~6.0",
+		"league/oauth2-google" : "^3.0"
+    }
+}
