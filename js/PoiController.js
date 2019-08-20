@@ -60,8 +60,8 @@ class PoiController
         L.drawLocal.draw.toolbar.buttons.marker='Add noticeboard to map.';
         L.drawLocal.edit.toolbar.buttons.edit='Move noticeboard.';
         L.drawLocal.edit.toolbar.buttons.remove='Delete noticeboard.';
-		L.drawLocal.edit.handlers.edit.tooltip.text = 'Drag noticeboard to move.';
-		L.drawLocal.edit.handlers.remove.tooltip.text = 'Click on noticeboard to delete.';
+        L.drawLocal.edit.handlers.edit.tooltip.text = 'Drag noticeboard to move.';
+        L.drawLocal.edit.handlers.remove.tooltip.text = 'Click on noticeboard to delete.';
 
         this.drawControl = new L.Control.Draw ( { 
             draw: {
@@ -149,8 +149,13 @@ class PoiController
                     (annJson, "/fm/ws/annotation.php", "deleteMulti",
                          (function(e)
                             { 
-                                alert("Note(s) deleted!");
-                                this.annotations = [];
+                                var deleted = JSON.parse(e.target.responseText);
+                                if(deleted.length > 0) {
+                                    alert(`${deleted.length} noticeboard(s) deleted!`);
+                                    this.annotations = [];
+                                } else {
+                                    alert('Unable to delete any noticeboards - maybe you did not create them?');
+                                }
                             } ).bind(this));
                 }
             },
