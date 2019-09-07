@@ -17,10 +17,7 @@ class HikarApp {
             this.dlg = new Dialog('main',
                 { 'Close': ()=> { this.dlg.hide(); } }, 
                 { backgroundColor: 'rgba(128,128,192,0.9)',
-                    width: '800px',
-                    height: '800px',
-                    color: 'white',
-                    borderRadius: '15px' } );
+                    color: 'white'} );
 
              var content= 
 "<h2>Create noticeboards...</h2>"
@@ -41,16 +38,16 @@ class HikarApp {
                 "</div>"+
             "</div><div id='searchResults' style='clear: both'></div></div></div>";
             this.dlg.setContent(content);
-            this.dlg.setPosition("100px", "100px");
+            this.dlg.div.id='dlgNoticeboard';
             this.dlg.show();
         
             var lat = (window.localStorage &&
                 window.localStorage.getItem("lat")!=null) 
                 ? window.localStorage.getItem("lat") : 51.05;
-			var lon = (window.localStorage &&
+            var lon = (window.localStorage &&
                 window.localStorage.getItem("lon")!=null) 
                 ? window.localStorage.getItem("lon") : -0.72;
-        	var zoom = (window.localStorage &&
+            var zoom = (window.localStorage &&
                 window.localStorage.getItem("zoom")!=null) 
                 ? window.localStorage.getItem("zoom") : 14;
 
@@ -65,7 +62,7 @@ class HikarApp {
                 {
                 backgroundColor: "rgba(128,128,192,0.9)",
                 color: "white",
-                borderRadius: "20px", textAlign: "center" });
+                textAlign: "center" });
         this.loginDlg.setContent('<h2>Login</h2>'+
             "<p><span id='loginError' class='error'></span><br />"+
             "<label for='username'>Email address</label><br />" +
@@ -73,8 +70,7 @@ class HikarApp {
             "<label for='password'>Password</label><br />" +
             "<input id='password' type='password' /> </p>"+
             "<p><a href='forgotPassword'>Forgot password?</a></p>");
-        this.loginDlg.setPosition("37%", "25%");
-        this.loginDlg.setSize ("25%", "288px");
+        this.loginDlg.div.id = 'dlgLogin';
         fetch ('login').then(resp => resp.json()).then(json => {
             this.username = json.username;
             this.userid = json.userid;
@@ -88,12 +84,10 @@ class HikarApp {
                 {
                 backgroundColor: "rgba(128,128,192,0.9)",
                 color: "white",
-                padding: '20px',
                 overflow: 'auto',
                 fontSize: '120%',
                 borderRadius: "20px", textAlign: "left" });
-        this.aboutDlg.setPosition("25%", "20%");
-        this.aboutDlg.setSize ("50%", "512px");
+        this.aboutDlg.div.id='dlgAbout';
         fetch('views/about.html')
             .then(resp=>resp.text())
             .then(txt => { this.aboutDlg.setContent(txt);
@@ -108,8 +102,9 @@ class HikarApp {
                 {
     
                 backgroundColor: "rgba(128,128,192,0.9)",
-                color: "white", padding: '10px',
-                borderRadius: "20px", textAlign: "center" });
+                color: "white", 
+                textAlign: "center" });
+        this.signupDlg.div.id='dlgSignup';
         this.signupDlg.setContent(
 "<h2>Sign up</h2>"+
 "<p id='signupMsg' class='error'></p>"+
@@ -137,8 +132,6 @@ class HikarApp {
 "noticeboard. However this information is not available via a public API."+
 "</p></div>");
 
-        this.signupDlg.setPosition("25%", "10%");
-        this.signupDlg.setSize ("800px", "560px");
     }    
 
     

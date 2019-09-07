@@ -40,16 +40,10 @@ body {
 }
 
 #errorContainer {
-	float: left;
+    float: left;
 }
 
-#headingContainer > h1, #headingContainer > p {
-    display: inline; 
-}
 
-#headingContainer > p {
-    font-size: 150%;
-}
 
 a {
     color: white; 
@@ -67,9 +61,84 @@ em {
     font-weight: bold;
 }
 
+.fmap_dlg {
+    position: absolute;
+}
+
 .fmap_dlg label {
     color: white; 
     text-shadow: black -2px 2px 4px;
+}
+
+@media only screen and (min-width: 600px) {
+    .fmap_dlg {
+        border-radius: 20px;
+    }
+
+    #dlgNoticeboard {
+        left: 100px;
+        top: 100px;
+        width: 800px;
+        height: 800px;
+    }
+
+    #dlgLogin {
+        left: 37%;
+        top: 25%;
+        width: 25%;
+        height: 288px;
+    }
+
+    #dlgAbout {
+        left: 25%;
+        top: 25%;
+        width: 50%;
+        height: 512px;
+        padding: 20px;
+    }
+
+    #dlgSignup {
+        left: 25%;
+        top: 10%;
+        width: 800px;
+        height: 560px;
+        padding: 10px;
+    }
+
+    #dlgNoticeboardAdd {
+        left: 100px;
+        top: 100px;
+        width: 400px;
+        height: 400px;
+    }
+
+    #imgContainer img {
+        width:100%;
+    }
+#headingContainer > h1, #headingContainer > p {
+    display: inline; 
+}
+#headingContainer > p {
+    font-size: 150%;
+}
+}
+
+@media only screen and (max-width: 599px) {
+    .fmap_dlg {
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
+    #imgContainer img {
+        height:100%;
+    }
+
+	#blurb {
+		display: none;
+	}
 }
 
 
@@ -114,9 +183,9 @@ input[type=text], input[type=password] {
 
 #map {
     z-index: 2;
-	width: 100%; 
-	height: 100%; 
-	border: 1px solid red;
+    width: 100%; 
+    height: 100%; 
+    border: 1px solid red;
 }
 
 #panorama, #map {
@@ -181,6 +250,3 @@ input[type=text], input[type=password] {
     font-size: 120%;
 }
 
-#imgContainer img {
-	width:100%;
-}

@@ -249,10 +249,7 @@ class PoiController
                 }
             },
             { backgroundColor: '#000080',
-                    width: '400px',
-                    height: '400px',
-                    color: 'white',
-                    borderRadius: '15px' } );
+                    color: 'white' } );
 
           var content= 
         "<p>Enter your noticeboard's text...</p>"+
@@ -265,8 +262,8 @@ class PoiController
                 "<option value='1'>Caution (steep, muddy, animals, blocked etc)</option>"+
                 "<option value='3'>Place of interest (viewpoint, historical site etc)</option></select>"+
                 "</p>";
+            this.dlg.div.id='dlgNoticeboardAdd';
             this.dlg.setContent(content);
-            this.dlg.setPosition("l00px", "100px");
             if(!this.dlg.isVisible()) {
                 this.dlg.show();
             }
