@@ -44,6 +44,9 @@ body {
 }
 
 
+#imgContainer {
+    overflow: hidden;
+}
 
 a {
     color: white; 
@@ -115,12 +118,18 @@ em {
     #imgContainer img {
         width:100%;
     }
-#headingContainer > h1, #headingContainer > p {
-    display: inline; 
-}
-#headingContainer > p {
-    font-size: 150%;
-}
+
+    #headingContainer > h1, #headingContainer > p:not(.mobileOnly) {
+        display: inline; 
+    }    
+
+    #headingContainer > p {
+        font-size: 150%;
+    }
+
+    .mobileOnly {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 599px) {
@@ -136,9 +145,9 @@ em {
         height:100%;
     }
 
-	#blurb {
-		display: none;
-	}
+    .noMobile {
+        display: none;
+    }
 }
 
 

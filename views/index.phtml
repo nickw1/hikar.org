@@ -23,13 +23,12 @@
     <div id='heading'>
         <div id="loginContainer"> </div>
         <div id='headingContainer'>
-            <h1>Hikar<span id='blurb'> - OpenStreetMap augmented reality for walkers...</span></h1>
-			<p>Download from
-			<a href='https://play.google.com/store/apps/details?id=freemap.hikar'>Google Play</a>, <a id='more' href='#'>find out more</a> or <a id='noticeboard' href='#'>create noticeboards</a>.</p>
+            <h1>Hikar<span class='noMobile'> - OpenStreetMap augmented reality for walkers...</span></h1>
+            <p id='headingLinks'></p>
         </div>
-		<div id='errorContainer' class='error'>
-			<?=$error ? $error : ""?>	
-		</div>
+        <div id='errorContainer' class='error'>
+            <?=$error ? $error : ""?>    
+        </div>
     </div>
 <div id='imgContainer'>
 <img src='images/hikar_screenshot.png' alt='Hikar screenshot' />

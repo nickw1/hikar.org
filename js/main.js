@@ -6,14 +6,31 @@ function init() {
 class HikarApp {
 
     constructor() {
-        this.setupMap();
         this.setupAbout();
+        this.setupMediaQueries();
         this.setupSignup();
         this.setupLogin();
     }
 
+    setupMediaQueries() {
+        this.mq = window.matchMedia("(max-width: 600px)");
+        this.mq.addListener(this.switchMobileMode.bind(this));
+        this.switchMobileMode(this.mq);
+    }
+
+    switchMobileMode(mq) {
+        document.getElementById('headingLinks').innerHTML = mq.matches ? 
+           "<a href='https://play.google.com/store/apps/details?id=freemap.hikar'>Download</a> | <a id='more' href='#'>More</a> | <a id='noticeboard' href='#'>Create noticeboards</a>" :
+            "Download from <a href='https://play.google.com/store/apps/details?id=freemap.hikar'>Google Play</a>, <a id='more' href='#'>find out more</a> or <a id='noticeboard' href='#'>create noticeboards</a>.";
+        this.setupLinks();
+    }
+
+    setupLinks() {
+        document.getElementById('more').addEventListener('click', this.aboutDlg.show.bind(this.aboutDlg));
+        document.getElementById('noticeboard').addEventListener('click', this.setupMap.bind(this));
+    }
+
     setupMap() {
-        document.getElementById("noticeboard").addEventListener("click", e=> {
             this.dlg = new Dialog('main',
                 { 'Close': ()=> { this.dlg.hide(); } }, 
                 { backgroundColor: 'rgba(128,128,192,0.9)',
@@ -52,7 +69,7 @@ class HikarApp {
                 ? window.localStorage.getItem("zoom") : 14;
 
             this.hikarMap = new HikarMap("map", lat, lon, zoom);    
-        });
+       
     }
 
     setupLogin() {
@@ -92,7 +109,6 @@ class HikarApp {
             .then(resp=>resp.text())
             .then(txt => { this.aboutDlg.setContent(txt);
         });
-        document.getElementById('more').addEventListener('click', this.aboutDlg.show.bind(this.aboutDlg));
     }
 
     setupSignup() {
@@ -206,5 +222,6 @@ class HikarApp {
             this.onLoginStateChange();
         });
     }
+
 }
 
