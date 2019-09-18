@@ -2,7 +2,7 @@
 class HikarMap {
 
     constructor(mapDivId, lat, lon, zoom) {
-        this.map = L.map(mapDivId, {minZoom: 14, maxZoom:20});
+        this.map = L.map(mapDivId, {minZoom: 13, maxZoom:20});
         var url = "https://www.hikar.org/fm/ws/tsvr.php?x={x}&y={y}&z={z}&way=highway,natural,waterway,railway,power,barrier,landuse&poi=place&coastline=1&kothic=2";
         var layerOtm = new L.TileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {attribution: 'Map data (c)OpenStreetMap contributors, ODBL; contours SRTM | Map display: &copy; OpenTopoMap (CC-by-SA)'}).addTo(this.map);
         var layerKothic = new L.TileLayer.Kothic(url, {attribution: 'Map data (c)OpenStreetMap contributors, ODBL | Map display: kothic-js'});

@@ -18,16 +18,34 @@ class HikarApp {
         this.switchMobileMode(this.mq);
     }
 
-    switchMobileMode(mq) {
-        document.getElementById('headingLinks').innerHTML = mq.matches ? 
+    switchMobileMode() {
+        document.getElementById('headingLinks').innerHTML = this.mq.matches ? 
            "<a href='https://play.google.com/store/apps/details?id=freemap.hikar'>Download</a> | <a id='more' href='#'>More</a> | <a id='noticeboard' href='#'>Create noticeboards</a>" :
             "Download from <a href='https://play.google.com/store/apps/details?id=freemap.hikar'>Google Play</a>, <a id='more' href='#'>find out more</a> or <a id='noticeboard' href='#'>create noticeboards</a>.";
+        if(document.getElementById('mapNotes')) {
+            this.setupMapNotes();
+        }
+        
         this.setupLinks();
+        document.getElementById('image').src = this.mq.matches ? 'images/hikar_crop.png': 'images/hikar_screenshot.png';
     }
 
     setupLinks() {
         document.getElementById('more').addEventListener('click', this.aboutDlg.show.bind(this.aboutDlg));
         document.getElementById('noticeboard').addEventListener('click', this.setupMap.bind(this));
+    }
+
+    setupMapNotes() {
+        document.getElementById('mapNotes').innerHTML = (this.mq.matches ? 
+"<p>Select the marker icon and click on the map to add a noticeboard." :
+("<h2>Create noticeboards...</h2>"+
+"<p>Upcoming version 0.3 will show <em>augmented reality noticeboards</em>, "+
+"informing walkers of points of interest along the way or warning them of "+
+"hazards such as steep paths, animals, or path blockages."+
+"Just do it by selecting the marker icon and clicking on the map. Note "+
+"that you will need to be <a href='/login'>logged in with your Hikar account</a>"+
+" to be able to create noticeboards, and all noticeboards must be verified by site admins.</p>")) + 
+"<p><strong>Privacy notice: your user ID will be recorded in the Hikar database alongside your noticeboard, so it is possible for the Hikar admin to find out which users contributed which notices.</strong> However, this information is not available via a public API.</p>";
     }
 
     setupMap() {
@@ -37,26 +55,23 @@ class HikarApp {
                     color: 'white'} );
 
              var content= 
-"<h2>Create noticeboards...</h2>"
-+"<p>Upcoming version 0.3 will show <em>augmented reality noticeboards</em>, "+
-"informing walkers of points of interest along the way or warning them of "+
-"hazards such as steep paths, animals, or path blockages. While version 0.3 "+
-"is not out just yet, you can add noticeboards <strong>right now!</strong></p>"+
-"<p>Just do it by selecting the marker icon and clicking on the map. Note "+
-"that you will need to be <a href='/login'>logged in with your Hikar account</a>"+
-" to be able to create noticeboards, and all noticeboards must be verified by site admins.</p>"+
-"<p><strong>Privacy notice: your user ID will be recorded in the Hikar database alongside your noticeboard, so it is possible for the Hikar admin to find out which OSM users contributed which notices.</strong>. However, this information is not available via a public API.</p>"+
-"<div id='map' style='margin-left: auto; margin-right:auto; width:640px; height:480px'>"+
-            "<div id='searchContainer'>"+
+    "<div id='mapNotes'></div>"+
+    "<div id='mapContainer'>"+
+        "<div id='searchContainer'>"+
             "<div id='search'>"+
                 "<input id='q' type='text'  />"+
                 "<div id='imageContainer'>" +
                 "<img src='images/search.png' alt='Search' id='searchBtn' />"+
                 "</div>"+
-            "</div><div id='searchResults' style='clear: both'></div></div></div>";
-            this.dlg.setContent(content);
+            "</div>"+
+            "<div id='searchResults' style='clear: both'></div>"+
+        "</div>"+
+        "<div id='map' style='width: 100%; height: 100%'></div>"+
+    "</div>";
             this.dlg.div.id='dlgNoticeboard';
+            this.dlg.setContent(content);
             this.dlg.show();
+            this.setupMapNotes();
         
             var lat = (window.localStorage &&
                 window.localStorage.getItem("lat")!=null) 

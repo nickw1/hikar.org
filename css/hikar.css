@@ -73,6 +73,20 @@ em {
     text-shadow: black -2px 2px 4px;
 }
 
+#searchContainer {
+    background-color: #000040;
+    width: 100%;
+    z-index: 9999;
+    text-align: left;
+}
+
+#imgContainer img {
+    min-width:100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
 @media only screen and (min-width: 600px) {
     .fmap_dlg {
         border-radius: 20px;
@@ -84,6 +98,7 @@ em {
         width: 800px;
         height: 800px;
     }
+
 
     #dlgLogin {
         left: 37%;
@@ -115,9 +130,6 @@ em {
         height: 400px;
     }
 
-    #imgContainer img {
-        width:100%;
-    }
 
     #headingContainer > h1, #headingContainer > p:not(.mobileOnly) {
         display: inline; 
@@ -130,6 +142,22 @@ em {
     .mobileOnly {
         display: none;
     }
+
+    #mapContainer {
+        width: 640px;
+        height: 480px;
+        margin-top: 10px;
+        z-index: 2;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+    #searchContainer {
+        top: 20px;
+        left: 80px;
+        width: 300px;
+        position: absolute;
+    }
 }
 
 @media only screen and (max-width: 599px) {
@@ -139,6 +167,7 @@ em {
         width: 100%;
         height: 100%;
         overflow: auto;
+        font-size: 110%;
     }
 
     #imgContainer img {
@@ -147,6 +176,17 @@ em {
 
     .noMobile {
         display: none;
+    }
+    
+    #mapContainer {
+        width: 100%;
+        height: 50%;
+        margin-top: 10px;
+    }
+
+    #dlgNoticeboard > div:nth-child(1) {
+        width: 100%;
+        height: 70%;
     }
 }
 
@@ -190,16 +230,6 @@ input[type=text], input[type=password] {
     height: calc(100% - 100px);  
 }
 
-#map {
-    z-index: 2;
-    width: 100%; 
-    height: 100%; 
-    border: 1px solid red;
-}
-
-#panorama, #map {
-    overflow: hidden;
-}
 
 #about_content, #signup_content {
     height:432px;
@@ -216,15 +246,6 @@ input[type=text], input[type=password] {
     text-decoration: underline;
 }
 
-#searchContainer {
-    background-color: #000040;
-    position: absolute;
-    top: 20px;
-    left: 80px;
-    width: 300px;
-    z-index: 9999;
-    text-align: left;
-}
 
 #search {
     padding: 5px;
