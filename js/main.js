@@ -39,7 +39,7 @@ class HikarApp {
         document.getElementById('mapNotes').innerHTML = (this.mq.matches ? 
 "<p>Select the marker icon and click on the map to add a noticeboard." :
 ("<h2>Create noticeboards...</h2>"+
-"<p>Upcoming version 0.3 will show <em>augmented reality noticeboards</em>, "+
+"<p>New version 0.3 shows <em>augmented reality noticeboards</em>, "+
 "informing walkers of points of interest along the way or warning them of "+
 "hazards such as steep paths, animals, or path blockages."+
 "Just do it by selecting the marker icon and clicking on the map. Note "+

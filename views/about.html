@@ -26,7 +26,7 @@ distance to nearby points of interest (see the screenshots below).</p>
 </ul>
 
 <h2>Using Hikar</h2>
-<p>The current version, 0.2, is available on
+<p>The current version, 0.3, is available on
 <a href='https://play.google.com/store/apps/details?id=freemap.hikar'>
 Google Play</a>.
 Data will then be downloaded from the server (or from the device
@@ -51,6 +51,33 @@ new field of view will appear on the display.</p>
 <img src="/images/Hikar_screenshot_3.small.png" />
 </p>
 <p>These were taken in October 2018 using an early snapshot of Hikar 0.2.</p>
+<h2>Changes for version 0.3</h2>
+
+<p>Version 0.3 was released on September 19th, 2019 and
+contains these new features:
+	<ul>
+	<li><strong>Route to a nearby POI.</strong> Hikar will be able to 
+	calculate a route to a nearby point of interest; this will be overlaid on
+	the OpenStreetMap data as a thicker yellow line... a "yellow brick road"
+	if you like!</li>
+	<li><strong>Virtual noticeboards.</strong> The existing signpost feature
+	will be extended to show virtual noticeboards, informing users of places
+	of interest (such as viewpoints or historical sites) or warning users of
+	hazards or issues (such as steep paths, animals or blocked paths). 
+	These noticeboards will be <strong>crowdsourced from this website</strong>
+	and you can start adding them <strong>now</strong>... click the "create
+	noticeboards" link above.</li>
+	<li>Facility to pre-download data at a given location has a map-based
+	interface.</li>
+	<li>Different data download zoom levels optimised for rural and urban
+	areas. These range from approx 18km x 18km (optimised for sparsely
+	populated rural areas) to 2.5km x 2.5km (optimised for large cities).
+	Signpost generation takes some time in urban areas, so you are recommended
+	to select one of the 'urban' levels to download less data; but in 
+	very rural areas, 18km x 18km of data can be downloaded and signpost
+	generation is still usably fast, e.g. 10s in the New Forest.</li>
+	</ul>
+</p>
 <h2>Videos (old)</h2>
 
 <p>
@@ -88,28 +115,8 @@ offset from its true position</li>
 
 <h2>Coverage</h2>
 
-<p>Version 0.2 covers <strong>the whole of Europe, plus Turkey</strong>.</p>
+<p>Version 0.3 covers <strong>the whole of Europe, plus Turkey</strong>.</p>
 
-<h2>Upcoming version 0.3</h2>
-
-<p>Upcoming version 0.3 will be released by mid-September 2019 and will
-contain these new features:
-	<ul>
-	<li><strong>Route to a nearby POI.</strong> Hikar will be able to 
-	calculate a route to a nearby point of interest; this will be overlaid on
-	the OpenStreetMap data as a thicker yellow line... a "yellow brick road"
-	if you like!</li>
-	<li><strong>Virtual noticeboards.</strong> The existing signpost feature
-	will be extended to show virtual noticeboards, informing users of places
-	of interest (such as viewpoints or historical sites) or warning users of
-	hazards or issues (such as steep paths, animals or blocked paths). 
-	These noticeboards will be <strong>crowdsourced from this website</strong>
-	and you can start adding them <strong>now</strong>... click the "create
-	noticeboards" link above.</li>
-	<li>Facility to pre-download data at a given location will have a map-based
-	interface.</li>
-	</ul>
-</p>
 <h2>Detail on how it works (briefly)</h2>
 
 <p>Hikar uses the Android location and sensor APIs to obtain the location and orientation of the device, then loads OSM data (as GeoJSON, produced from a PostGIS database) and height data (the Mapzen Terrarium elevation data set, now
