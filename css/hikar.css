@@ -6,7 +6,12 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color : #000080;
+    background-color :white;
+    color: black; 
+}
+
+body a {
+    color: blue;
 }
 
 #content, html, body {
@@ -14,14 +19,18 @@ body {
 }
 
 #main {
-    background-color: #000040;
     color: white;
     outline: 1px solid white;
     position: relative;
 }
 
+#main a {
+    color: white;
+}
+
 
 #heading {
+    background-color: #000040;
     height: 100px;
     border: 1px solid #8080ff;
     border-bottom: 1px solid white;
@@ -46,6 +55,9 @@ body {
 
 #imgContainer {
     overflow: hidden;
+    text-align: center;
+    width: 100%;
+    margin: 10px;
 }
 
 a {
@@ -81,13 +93,13 @@ em {
 }
 
 #imgContainer img {
-    min-width:100%;
-    min-height: 100%;
+    min-width:50%;
+    min-height: 50%;
     width: auto;
     height: auto;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
     .fmap_dlg {
         border-radius: 20px;
     }
@@ -131,14 +143,6 @@ em {
     }
 
 
-    #headingContainer > h1, #headingContainer > p:not(.mobileOnly) {
-        display: inline; 
-    }    
-
-    #headingContainer > p {
-        font-size: 150%;
-    }
-
     .mobileOnly {
         display: none;
     }
@@ -160,7 +164,7 @@ em {
     }
 }
 
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 799px) {
     .fmap_dlg {
         top: 0%;
         left: 0%;

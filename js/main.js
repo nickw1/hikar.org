@@ -13,15 +13,14 @@ class HikarApp {
     }
 
     setupMediaQueries() {
-        this.mq = window.matchMedia("(max-width: 600px)");
+        this.mq = window.matchMedia("(max-width: 800px)");
         this.mq.addListener(this.switchMobileMode.bind(this));
         this.switchMobileMode(this.mq);
     }
 
     switchMobileMode() {
-        document.getElementById('headingLinks').innerHTML = this.mq.matches ? 
-           "<a href='https://play.google.com/store/apps/details?id=freemap.hikar'>Download</a> | <a id='more' href='#'>More</a> | <a id='noticeboard' href='#'>Create noticeboards</a>" :
-            "Download from <a href='https://play.google.com/store/apps/details?id=freemap.hikar'>Google Play</a>, <a id='more' href='#'>find out more</a> or <a id='noticeboard' href='#'>create noticeboards</a>.";
+        document.getElementById('headingLinks').innerHTML = 
+           "<a href='https://play.google.com/store/apps/details?id=freemap.hikar'>Download</a> | <a id='noticeboard' href='#'>Create noticeboards</a>" ;
         if(document.getElementById('mapNotes')) {
             this.setupMapNotes();
         }
@@ -31,7 +30,6 @@ class HikarApp {
     }
 
     setupLinks() {
-        document.getElementById('more').addEventListener('click', this.aboutDlg.show.bind(this.aboutDlg));
         document.getElementById('noticeboard').addEventListener('click', this.setupMap.bind(this));
     }
 
@@ -51,7 +49,7 @@ class HikarApp {
     setupMap() {
             this.dlg = new Dialog('main',
                 { 'Close': ()=> { this.dlg.hide(); } }, 
-                { backgroundColor: 'rgba(128,128,192,0.9)',
+                { backgroundColor: 'rgba(96,96,192,0.9)',
                     color: 'white'} );
 
              var content= 
@@ -92,7 +90,7 @@ class HikarApp {
                 { 'Login': this.processLogin.bind(this),
                 'Cancel': ()=> { this.loginDlg.hide(); }},
                 {
-                backgroundColor: "rgba(128,128,192,0.9)",
+                backgroundColor: "rgba(96,96,192,0.9)",
                 color: "white",
                 textAlign: "center" });
         this.loginDlg.setContent('<h2>Login</h2>'+
@@ -114,7 +112,7 @@ class HikarApp {
         this.aboutDlg = new Dialog('main',
                 { 'OK': ()=> { this.aboutDlg.hide(); }},
                 {
-                backgroundColor: "rgba(128,128,192,0.9)",
+                backgroundColor: "rgba(96,96,192,0.9)",
                 color: "white",
                 overflow: 'auto',
                 fontSize: '120%',
@@ -132,7 +130,7 @@ class HikarApp {
                 'Close': ()=> { this.signupDlg.hide(); }},
                 {
     
-                backgroundColor: "rgba(128,128,192,0.9)",
+                backgroundColor: "rgba(96,96,192,0.9)",
                 color: "white", 
                 textAlign: "center" });
         this.signupDlg.div.id='dlgSignup';
