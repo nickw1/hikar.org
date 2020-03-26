@@ -19,7 +19,6 @@ body a {
 }
 
 #main {
-    color: white;
     outline: 1px solid white;
     position: relative;
 }
@@ -34,6 +33,7 @@ body a {
     height: 100px;
     border: 1px solid #8080ff;
     border-bottom: 1px solid white;
+	color: white;
 }
 
 #loginContainer {
@@ -219,8 +219,12 @@ input[type=text], input[type=password] {
     font-family: 'Roboto';
 }
 
-.error {
+.fmap_dlg .error {
     color: yellow;
+}
+
+#main .error {
+	font-weight: bold;
 }
 
 .selected > img {
