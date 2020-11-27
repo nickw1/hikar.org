@@ -23,7 +23,7 @@ body a {
     position: relative;
 }
 
-#main a {
+#heading a {
     color: white;
 }
 
@@ -210,14 +210,15 @@ input[type=button], input[type=submit], input[type=file], #file1 {
     margin: 5px;
 }
 
+/*
 input[type=text], input[type=password] {
     border: 0;
     border-bottom: 1px solid white;
     outline: 0;
     background: transparent;
-    color: white;
     font-family: 'Roboto';
 }
+*/
 
 .fmap_dlg .error {
     color: yellow;
